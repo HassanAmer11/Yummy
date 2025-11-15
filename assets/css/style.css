@@ -1,0 +1,32 @@
+/* ^ General style*/
+:root {
+    --primary-font: "Open Sans", sans-serif;
+    --light-color: #fff;
+    --dark-color: #333;
+    --link-color: #27b9c2;
+    --gray-color: #9fa3a7;
+    --off-white-color: #f7f8f9;
+    --danger-color: #f05638;
+}
+
+.main-nav {
+    width: 60px !important;
+}
+
+.main-nav .logo {
+    width: 50px;
+}
+
+.img-box{
+    overflow: hidden;
+}
+
+.overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: all 0.5s ease-in-out;
+    transform: translateY(100%);
+}
+
+.img-box:hover .overlay {
+    transform: translateY(0%);
+}
