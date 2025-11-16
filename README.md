@@ -1,5 +1,5 @@
-# AppName
+# face-coke
 ## 🔗 Live demo
-👉 **Visit the Website:** appUrl
+👉 **Visit the Website:** https://face-coke.vercel.app/
 
 
