@@ -24,9 +24,32 @@
 .overlay {
     background-color: rgba(255, 255, 255, 0.7);
     transition: all 0.5s ease-in-out;
-    transform: translateY(100%);
+    transform: translateY(101%);
 }
 
 .img-box:hover .overlay {
     transform: translateY(0%);
+}
+.main-loading {
+    z-index: 999;
+    color: white;
+}
+
+.inner-loading-screen {
+    position: absolute;
+    z-index: 9;
+    background-color: #0D0D0D;
+    display: flex;
+}
+
+i {
+    cursor: pointer;
+}
+
+.left-0 {
+    left: 0%;
+}
+
+.left-13 {
+    left: -13%;
 }

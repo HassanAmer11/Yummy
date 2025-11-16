@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yummy</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
     <!-- ====================== Bootstrap Style ============================ -->
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 
@@ -15,35 +16,39 @@
 </head>
 
 <body>
+    <div class="main-loading position-fixed d-flex top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center"
+        style="display: none;">
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
     <div class="container-fluid">
         <div class="row flex-nowrap">
-            <div class="col-md-2 bg-black position-fixed z-1">
-                <div class="row min-vh-100 ">
+            <div class="col-md-2 bg-black position-fixed z-1 left-13 side-bar">
+                <div class="row min-vh-100">
                     <div
-                        class="col-md-9 d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
+                        class="col-md-9 d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white menu-links">
                         <ul class="nav nav-pills flex-column mb-sm-auto">
-                            <li class="nav-item">
+                            <li onclick="showSearchInputs(); togglSideNav()">
                                 <a href="#" class="nav-link align-middle px-0">
                                     <span class="ms-1 text-white">Search</span>
                                 </a>
                             </li>
-                            <li>
+                            <li onclick="showCategories(); togglSideNav()">
                                 <a href="#" class="nav-link px-0 align-middle">
                                     <span class="ms-1 text-white">Categories</span></a>
                             </li>
 
-                            <li>
+                            <li onclick="showAreas(); togglSideNav()">
                                 <a href="#" class="nav-link px-0 align-middle">
                                     <span class="ms-1 text-white">Area</span>
                                 </a>
                             </li>
-                            <li>
+                            <li onclick="showIngredientss(); togglSideNav()">
                                 <a href="#" class="nav-link px-0 align-middle">
                                     <span class="ms-1 text-white">Ingredients</span>
                                 </a>
                             </li>
 
-                            <li>
+                            <li onclick="showContacts(); togglSideNav()">
                                 <a href="#" class="nav-link px-0 align-middle">
                                     <span class="ms-1 text-white">Contact Us</span>
                                 </a>
@@ -65,10 +70,10 @@
                         <div class=" d-flex flex-column justify-content-between align-items-center py-3 h-100">
                             <img src="./assets/images/logo.png" class="logo" alt="logo">
                             <div class="toggle-icon text-black">
-                                <i class="fa-solid fa-bars fs-3"></i>
+                                <i class="fa-solid fa-bars fa-2x open-close-icon"></i>
                             </div>
                             <div class="text-black">
-                                <i class="fa-solid fa-globe d-block"></i>
+                                <i class="fa-solid fa-globe"></i>
                                 <i class="fa-solid fa-share-nodes"></i>
                             </div>
                         </div>
@@ -76,172 +81,13 @@
                 </div>
             </div>
 
-            <div class="col py-3 bg-black text-white">
-                <div class="container">
-                    <div class="row g-4 px-5 py-4">
-
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="img-box position-relative rounded-3">
-                                <img src="./assets/images/kgfh3q1763075438.jpg" class="d-block w-100" alt="...">
-                                <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
-                                    <div class="text-black d-flex align-items-center h-100 fs-2 fw-bold">
-                                        meal
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col py-3 bg-black text-white min-vh-100">
+                <div class="container h-100">
+                    <div class="row" id="searchContainer"></div>
+                    <div class="inner-loading-screen d-flex position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div class="row g-4 px-5 py-4 rowData">
                     </div>
                 </div>
             </div>
@@ -250,7 +96,7 @@
 
 
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
