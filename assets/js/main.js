@@ -51,7 +51,7 @@ function displayMeals(meals) {
   let divBody = "";
   meals.forEach((item) => {
     divBody += `
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6">
           <div class="img-box position-relative rounded-3" onclick="getMealDetails('${item.idMeal}')">
               <img src="${item.strMealThumb}" class="d-block w-100" alt="...">
               <div class="overlay position-absolute start-0 end-0 bottom-0 top-0">
@@ -76,7 +76,7 @@ async function showCategories() {
     result.categories.forEach((item) => {
       divBody += `
       
-          <div class="col-md-3">
+          <div class="col-lg-3 col-md-6">
                   <div class="img-box position-relative rounded-3" onclick="getMeals('c=${
                     item.strCategory
                   }')">
@@ -177,7 +177,7 @@ async function showAreas() {
     let divBody = "";
     Areas.forEach((item) => {
       divBody += `
-          <div class="col-md-3">
+          <div class="col-lg-3 col-md-6">
                 <div onclick="getMeals('a=${item.strArea}')" class="rounded-2 text-center cursor-pointer">
                         <i class="fa-solid fa-house-laptop fa-4x"></i>
                         <h3>${item.strArea}</h3>
@@ -199,7 +199,7 @@ async function showIngredientss() {
     let divBody = "";
     Ingredients.forEach((item) => {
       divBody += `
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6">
                 <div
                  onclick="getMeals('i=${item.strIngredient}')"
                 class="rounded-2 text-center cursor-pointer">
