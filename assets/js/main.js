@@ -16,15 +16,29 @@ toggleBtn.addEventListener("click", function (event) {
   togglSideNav();
 });
 
+togglSideNav();
 searchByName("");
 toggleMainLoader();
 
 function togglSideNav() {
   toggleBtn.classList.toggle("fa-bars");
   toggleBtn.classList.toggle("fa-x");
-
-  side_bar.classList.toggle("left-0");
-  side_bar.classList.toggle("left-13");
+  if (toggleBtn.classList.contains("fa-x")) {
+    let boxWidth = $(".side-bar .menu-links").outerWidth();
+    $(".side-bar").animate(
+      {
+        left: -boxWidth,
+      },
+      500
+    );
+  } else {
+    $(".side-bar").animate(
+      {
+        left: 0,
+      },
+      500
+    );
+  }
   searchContainer.innerHTML = "";
 }
 
@@ -253,7 +267,7 @@ async function fLetterByFirstLetter(val = "") {
 
 function showContacts() {
   rowData.innerHTML = `<div class="contact min-vh-100 d-flex justify-content-center align-items-center">
-    <div class="container w-75 text-center">
+    <div class="container text-center">
         <div class="row g-4">
             <div class="col-md-6">
                 <input id="nameInput" type="text" class="form-control" placeholder="Enter Your Name">
