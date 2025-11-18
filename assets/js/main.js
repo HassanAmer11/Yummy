@@ -51,14 +51,20 @@ async function searchByName(term) {
   rowData.innerHTML = "";
   inner_loading.classList.add("d-flex");
   inner_loading.classList.remove("d-none");
-  let response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
-  );
-  response = await response.json();
+  try {
+    let response = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
+    );
+    response = await response.json();
+    response.meals ? displayMeals(response.meals) : displayMeals([]);
+  } catch {
+    console.log("error");
+  } finally {
+    inner_loading.classList.remove("d-flex");
+    inner_loading.classList.add("d-none");
+  }
 
-  response.meals ? displayMeals(response.meals) : displayMeals([]);
-  inner_loading.classList.remove("d-block");
-  inner_loading.classList.add("d-none");
+
 }
 
 function displayMeals(meals) {
