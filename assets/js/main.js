@@ -23,7 +23,7 @@ toggleMainLoader();
 function togglSideNav() {
   toggleBtn.classList.toggle("fa-bars");
   toggleBtn.classList.toggle("fa-x");
-  if (toggleBtn.classList.contains("fa-x")) {
+  if (toggleBtn.classList.contains("fa-bars")) {
     let boxWidth = $(".side-bar .menu-links").outerWidth();
     $(".side-bar").animate(
       {
@@ -63,8 +63,6 @@ async function searchByName(term) {
     inner_loading.classList.remove("d-flex");
     inner_loading.classList.add("d-none");
   }
-
-
 }
 
 function displayMeals(meals) {
@@ -404,3 +402,33 @@ function enableSubmitBtn(flag) {
     submitBtn.setAttribute("disabled", true);
   }
 }
+
+var sendMessageToPaient = function () {
+  var obj = {
+    clinc_name: "نساء وتوليد",
+    docor_name: "سوزان البنا - البنا ",
+    message: "هدى احمد برجاء التوجة لعيادة نساء وتوليد الطبيب سوزان البنا ",
+    pat_tel: "01152596875",
+    patientId: "66              ",
+  };
+  var MobileApiURL = "http://localhost/MobileApi/";
+  fetch(MobileApiURL + "api/MedicalRecord/callPatient", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      patientId: obj.patientId,
+      pat_tel: obj.pat_tel,
+      message: obj.message,
+      docor_name: obj.docor_name,
+      clinc_name: obj.clinc_name,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) =>
+      console.log("success", "Patient notification sent successfully")
+    )
+    .catch((err) => console.log("error", "Error: " + err));
+};
+
