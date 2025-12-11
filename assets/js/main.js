@@ -240,7 +240,7 @@ function showSearchInputs() {
   rowData.innerHTML = "";
   searchContainer.innerHTML = `
     <div class="container w-75" id="searchContainer">
-    <div class="row py-4 ">
+    <div class="row py-4 g-3">
         <div class="col-md-6 ">
             <input oninput="searchByName(this.value)" class="form-control" type="text" placeholder="Search By Name">
         </div>
